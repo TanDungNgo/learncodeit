@@ -26,13 +26,35 @@
                 <th> Search </th>
                 <th>
                     <form action="">
-                        <input type="search" name="q" placeholder="Tìm kiếm bài viết" >
+                        <input type="search" name="q" placeholder="Tìm kiếm bài viết" value="{{$search}}">
                     </form>
                 </th>
                 <th>
                     <i class="fas fa-search"></i>
                 </th>
             </table>
+            @if (Auth::check())
+                <div class="right-top-bar flex-w h-full">
+                    <form action="{{route('bookmark.index')}}" method="POST" class="flex-c-m trans-04 p-lr-25">
+                        {{ csrf_field() }}
+                        @php
+                            $title = 'Bookmark ' . Auth::user()->name;
+                        @endphp
+                        <input type="hidden" name="title" value="{{$title}}"/>
+                            <button style="background-color:aliceblue">
+                                <i class="fas fa-book"></i>
+                                Bookmark
+                            </button>
+                        </a>
+                    </form>
+                </div>
+                <div class="right-top-bar flex-w h-full">
+                    <a href="{{route('logout')}}" class="flex-c-m trans-04 p-lr-25">
+                        <i class="fas fa-remove"></i>
+                        Đăng xuất
+                    </a>
+                </div>
+            @endif
 		</div>
 	</div>
 

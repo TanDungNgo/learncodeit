@@ -10,15 +10,11 @@ class Like extends Model
     use HasFactory;
     protected $table = 'likes';
 
-    public $fillable = ['user_id', 'likeable_id', 'like'];
+    public $fillable = ['user_id', 'comment_id', 'like'];
 
     /**
      * @return mixed
      */
-    public function Likeable()
-    {
-        return $this->morphTo('App\Models\Comment', 'likeable');
-    }
 
     public function user()
     {

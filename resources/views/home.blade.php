@@ -31,7 +31,6 @@
             <div class="row">
                 @foreach($menus as $menu)
                     <div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-                        <!-- Block1 -->
                         <div class="block1 wrap-pic-w">
                             <img src="/template/images/icons/icon-danhmuc.png" alt="IMG-BANNER">
 

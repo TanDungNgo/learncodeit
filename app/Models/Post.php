@@ -12,7 +12,6 @@ class Post extends Model
 {
     use HasFactory;
     use Rateable;
-    // use CanBeBookmarked;
     protected $table = "posts";
     protected $fillable = [
         'name',

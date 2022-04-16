@@ -181,7 +181,7 @@ return [
         willvincent\Rateable\RateableServiceProvider::class,
 
         Nagy\LaravelRating\LaravelRatingServiceProvider::class,
-        Overtrue\LaravelFollow\FollowServiceProvider::class,
+        // Overtrue\LaravelFollow\FollowServiceProvider::class,
 
 
 

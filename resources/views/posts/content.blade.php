@@ -129,6 +129,18 @@
     </section>
 
 
+        <form action="{{route('bookmark.store')}}" method="POST">
+            {{ csrf_field() }}
+            <input type=hidden name=post_id value="{{ $post->id }}" />
+            <div class="card">
+                <div class="container-fliud">
+                    <div class="wrapper row">
+                        <button class="btn btn-success">Bookmark bài viết</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
 
     @extends('layouts.app')
     <div class="container">
@@ -169,6 +181,7 @@
         'comments' => $post->comments,
         'post_id' => $post->id,
         'users' => $users = App\Models\User::get(),
+        'likes' => $likes,
         ])
     <form action="{{route('comment.store')}}" method="post">
         @csrf

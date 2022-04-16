@@ -22,10 +22,9 @@ class CommentController extends Controller
     public function Like(Request $request)
     {
         $input = $request->all();
-        $input['likeable_id'] = $request->comment_id;
+        $input['comment_id'] = $request->comment_id;
         $input['user_id'] = auth()->user()->id;
         $like = new Like;
-        $input['likeable_type'] = $like->Likeable();
         Like::create($input);
         return back();
     }
@@ -36,7 +35,6 @@ class CommentController extends Controller
         $input['likeable_id'] = $request->comment_id;
         $input['user_id'] = auth()->user()->id;
         $like = new Like;
-        $input['likeable_type'] = $like->likeable();
         Like::create($input);
         return back();
     }
