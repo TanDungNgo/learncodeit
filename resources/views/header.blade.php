@@ -26,7 +26,7 @@
                 <th> Search </th>
                 <th>
                     <form action="">
-                        <input type="search" name="q" placeholder="Tìm kiếm bài viết" value="{{$search}}">
+                        <input type="search" name="q" placeholder="Tìm kiếm bài viết" value="">
                     </form>
                 </th>
                 <th>
