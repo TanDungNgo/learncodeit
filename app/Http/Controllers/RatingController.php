@@ -11,11 +11,11 @@ class RatingController extends Controller
     public function Rating(Request $request)
     {
         request()->validate(['rating' => 'required']);
-        $post = Post::find($request->id);
+        $input = $request->all();
+        $input['user_id'] = auth()->user()->id;
+        $input['rateable_id'] = $request->id;
         $rating = new Rating;
-        $rating->rating = $request->rating;
-        $rating->user_id = auth()->user()->id;
-        $post->ratings()->save($rating);
-        return redirect()->back();
+        Rating::create($input);
+        return back();
     }
 }

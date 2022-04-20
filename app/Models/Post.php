@@ -4,14 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use willvincent\Rateable\Rateable;
 
-
-// use Overtrue\LaravelFollow\Traits\CanBeBookmarked;
 class Post extends Model
 {
     use HasFactory;
-    use Rateable;
     protected $table = "posts";
     protected $fillable = [
         'name',
